@@ -1,0 +1,199 @@
+---
+output:
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+  word_document: default
+mainfont: Palatino
+header-includes:
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty}
+- \pagenumbering{gobble}
+---
+
+<center>
+
+![
+**Figure 1 | Study site, climate variables, and rice paddy fields with "conventional" and "no-fertilizer" farming practices**  
+(**a**) Location of the study site. The yellow marker indicates the site, while the red rectangle in the inset highlights the study region (Maps created using the `ggmap` package of R; &copy;Stadia Maps, &copy;Stamen Design, &copy;OpenMapTiles and &copy;OpenStreetMap). (**b**) Mean daily air temperature (°C). (**c**) Daily rainfall (mm). (**d**) Daily sunlight hours. Climate data were obtained from the weather station in Kyoto City, managed by the Japan Meteorological Agency. (**e**) "Conventional" paddy field. (**f**) "No-fertilizer" paddy field. The yellow panel in the image was used for collecting insect samples. Field photographs were taken on 12 July 2017 (&copy;M. Ushio).
+](formatted_figs/Fig1_MapClimate_ed.pdf){width=100%}
+
+</center>
+
+
+<center>
+
+![
+**Figure 2 | Rice growth patterns and yields**  
+(**a**) Rice height (cm). (**b**) SPAD values. (**c**) The number of rice stems. (**d**) Changes in rice height per week. (**e**) Changes in SPAD values per week. (**f**) Changes in the number of rice stems per week. (**g**) The total number of rice heads per rice individual. (**h**) The total wet or dry weight (g) per 12 rice individuals. Solid lines indicate mean values. Green color and and filled circle indicate data from the paddy fields using the conventional farming methods, and yellow color and filled triangle indicate data from the paddy fields using no fertilizers. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
+](formatted_figs/Fig2_RiceGrowth.pdf){width=100%}
+
+</center>
+
+
+
+
+<center>
+
+![
+**Figure 3 | Plant specialized metabolites, insect abundance, and plant cover in the paddy fields**  
+(**a**) Plant specialized metabolites. Each panel indicates a different type of plant specialized metabolites; (_Z_)-3-Hexenal, (_E_)-2-Hexenal, (_Z_)-3-Hexen-1-ol, 2-4-Heptadienal, linalool, $\beta$-caryophyllene, and methyl salicylate (MeSA) indicate plant volatile (relative peak area/fresh leaf weight), while diterpenoids ($\mu$g/g fresh leaf weight) indicates phytoalexin. (**b**) Insect abundance trapped by the sticky plate method set on the ridge between paddy fields. Each panel shows a different insect group. (**c**) Plant coverage (%) on the ridge area between the paddy fields. Each panel shows a different plant type. Solid lines indicate mean values. Green color and and filled circle indicate data from the conventional paddy field, and yellow color and filled triangle indicate data from the no-fertilizer paddy field. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
+](formatted_figs/Fig3_MetbGrInsc.pdf){width=90%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure 4 | Non-metric dimensional scaling (NMDS) of plant communities on the paddy ridges and plant specialized metabolites**  
+(**a**) NMDS of the plant communities on the paddy ridges based on Bray-Curtis dissimilarity (stress value = 0.1899). (**b**) NMDS of the plant specialized metabolites based on Bray-Curtis dissimilarity (stress value = 0.1568). The density of each color indicates the number of weeks since the rice planting in the rice fields. Green and and filled circle indicate data from the conventional paddy field, and yellow and filled triangle indicate data from the no-fertilizer paddy field.
+](formatted_figs/Fig4_NMDSMetbGr.pdf){width=80%}
+
+</center>
+
+
+<center>
+
+![
+**Figure 5 | Environmental DNA in water samples collected from the two paddy fields**  (**a**) The abundance (eDNA copies/ml water) of the ecological communities in the water samples. Each panel indicates the conventional or no-fertilizers paddy field. Colors indicate different taxonomic groups. (**b**) The number of OTUs detected in the water samples. Solid lines indicate mean values.(**c**) NMDS of the eDNA-based ecological community data based on Bray-Curtis dissimilarity (stress value = 0.1924).  Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy field. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
+](formatted_figs/Fig5_eDNApattern.jpg){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure 6 | Effects of ecological variables on rice height growth in the conventional and no-fertilizer paddy fields**  
+Each panel shows (**a**) the effects of ecological variables on overall rice height growth per unit variable (i.e., coefficients of the MDR S-map), (**b**) the abundance of ecological variables, and (**c**) the overall effects of ecological variables on rice height growth (calculated by "the MDR S-map coefficient $\times$ Abundance"), respectively. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. The $y$-axis labels include assigned taxa names, taxa code, and effect delay ($tp$; e.g., $tp=-1$ indicates the taxon has effects on the rice performance one week later).
+](formatted_figs/Fig6_SmapHeight.pdf){width=100%}
+
+</center>
+
+
+
+<!-- ------------------------------------------------
+# Supplementary Figures
+----------------------------------------------------- --> 
+
+
+<center>
+
+![
+**Figure S1 | Supplementary images from the paddy field survey in 2017**  
+(**a**) Study site layout including two rice paddy fields: "conventional" and "no-Fertilizer." The two paddy fields are separated by ridges, and we set a 3 m $\times$ 15 m plot in each paddy field (indicated by a red rectangle) with a 2-m buffer zone between the plot and the ridge. Each 3 m $\times$ 15 m plot was divided into five sections (separated by dashed red lines in each plot), with each section covering an area of 3 m $\times$ 3 m. Water samples were collected from all the five sections in each plot to monitor the ecological communities, and the performance of  rice individuals were monitored (e.g., rice heights, SPAD, and the numbers of stems and heads) at the same locations. We also set five sampling points on the ridge (indicated by the red circles). We set sticky panels for collecting insects and 50 cm $\times$ 50 cm quadrats for monitoring wild weeds. (**b**) Sticky panels for insect monitoring (30 August 2017; &copy;M. Ushio). (**c**) Plant coverage survey (5 July 2017; &copy;M. Ushio). Each grid corresponds to 10 cm $\times$ 10 cm. (**d**) Yield survey in September 2017 (&copy;S. Yoshinami). (**e**) Rice heads before harvesting (&copy;S. Yoshinami).
+](formatted_figs/FigS01_OguraDetails_ed.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S2 | Rice grain data**  
+(**a**) The number of rice grains per 10 rice heads. (**b**) Dry weight (g) of the rice grains per 10 heads. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
+](formatted_figs/FigS02_RiceGrains.pdf){width=85%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S3 | The coverage (%) of plant species on the paddy ridges**  
+Each panel shows the coverage (%) of each plant species as indicated by the strip label. _Taraxacum officinale_, _Cyperus eragrostis_, _Euphorbia maculata_, and _Paspalum dilatatum _ are alien species, while the other species are native species. _Rorippa palustris_, _Fimbristylis littoralis_, _Euphorbia maculata_, _Digitaria ciliaris_, _Echinochloa crus-galli_ var. _crus-galli_, _Dinebra chinensis_, and _Portulaca oleracea_ are annual species, while the other plant species are perennial species. Solid lines indicate mean values. Green and and filled circle indicate data from the conventional paddy field, and yellow and filled triangle indicate data from the no-fertilizer paddy field.
+](formatted_figs/FigS03_GrassAll.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S4 | Summary of Sequence reads from the quantitative eDNA metabarcoding**  
+Sequence reads of standard DNA and non-standard DNA (real organism DNA) for (**a**) 16S, (**b**) 18S, (**c**) COI, and (**d**) ITS regions. "Sample," "Standard NC," "Field NC," and "PCR NC" indicate real samples, standard DNA negative controls (NC) (MilliQ water with standard DNA only), field NC (MilliQ water collected on site and processed with standard DNA) and PCR NC (MilliQ water included in the PCR without standard DNA), respectively. Red and blue points indicate sequence reads of standard DNA and non-standard DNA detected from each sample, respectively.
+](formatted_figs/FigS04_SeqReads.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S5 | Top 12 most abundant taxa detected by the quantitative eDNA metabarcoding**  
+The top 12 eDNA taxa based on the total eDNA copy numbers. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. The solid line indicate the mean eDNA copy numbers for each paddy field. Strip labels indicate the taxa code and taxa name assigned by Claident.
+](formatted_figs/FigS05_TopeDNA.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S6 | Temporal dynamics of major bacterial and fungal phyla detected by the quantitative eDNA metabarcoding**  
+(**a**) The relative and (**b**) absolute abundance of major phyla of bacteria, and  (**c**, **d**) those of fungi. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. The solid line indicate the mean eDNA copy numbers for each paddy field. Strip labels indicate the taxa code and taxa name assigned by Claident.
+](formatted_figs/FigS06_MajorMicGroups1.pdf){width=80%}
+
+</center>
+
+
+<center>
+
+![
+**Figure S7 | Temporal dynamics of major non-fungal eukaryota detected by the quantitative eDNA metabarcoding**  
+(**a**) The relative and (**b**) absolute abundance of major phyla of non-fungi eukaryota. Green and and filled circle indicate data from the conventional-farming paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. The solid line indicate the mean eDNA copy numbers for each paddy field. Strip labels indicate the taxa code and taxa name assigned by Claident.
+](formatted_figs/FigS07_MajorMicGroups2.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S8 | eDNA taxa that differentiate the conventional and no-fertilizer paddy fields**  
+The top 12 eDNA taxa based on their contribution to the differences in community compositions between the two paddy fields. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizer paddy fields. The solid line indicate the mean eDNA copy numbers for each paddy field. Strip labels indicate the taxa code and taxa name assigned by Claident.
+](formatted_figs/FigS08_TopDifeDNA.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S9 | Influences of ecological variables on the SPAD values in the conventional and no-fertilizer paddy fields**  
+Each panel shows (**a**) the influence of ecological variables on the rice SPAD values per unit variable (i.e., coefficients of the MDR S-map), (**b**) the abundance of ecological variables, and (**c**) the overall effects of ecological variables on rice height growth (calculated by "the MDR S-map coefficient $\times$ Abundance"), respectively. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizers paddy fields.
+](formatted_figs/FigS09_SmapSPAD.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S10 | Influences of ecological variables on the number of rice stems in the conventional and no-fertilizer paddy fields**  
+Each panel indicates (**a**) the influence of ecological variables on the number of rice stems per unit variable (i.e., coefficients of the MDR S-map), (**b**) the abundance of ecological variables, and (**c**) the overall effects of ecological variables on rice height growth (calculated by "the MDR S-map coefficient $\times$ Abundance"), respectively. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizers paddy fields.
+](formatted_figs/FigS10_SmapNstem.pdf){width=100%}
+
+</center>
+
+
+
+<center>
+
+![
+**Figure S11 | Temporal dynamics of taxa that causally influenced rice performance**   
+Temporal dynamics of (**a**) taxa that causally influenced the rice height growth, (**b**) SPAD values, and (**c**) the number of rice stems. Green and and filled circle indicate data from the conventional paddy fields, and yellow and filled triangle indicate data from the no-fertilizers paddy fields.
+](formatted_figs/FigS11_CausalSppDynamics.pdf){width=100%}
+
+</center>

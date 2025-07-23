@@ -1,0 +1,2 @@
+"E","E0","tau","tp","nn","nn0","n_lib","n_pred","rmse","te","ete","pval","n_surr","effect_var","cause_var","cond_var","fdr"
+1,0,1,-1,4,3,95,95,0.329589189133887,0.306685461206225,0.304024399568188,0,2000,"ITS_Taxa00009","mean_spad_diff","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0

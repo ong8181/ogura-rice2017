@@ -1,0 +1,25 @@
+"E","E0","tau","tp","nn","nn0","n_lib","n_pred","rmse","te","ete","pval","n_surr","effect_var","cause_var","cond_var","fdr"
+5,4,1,-2,6,5,90,90,0.118304180124315,0.202834819142615,0.201613174164578,0.001,2000,"mean_height_diff","clim_mean_temp",NA,0.00218181818181818
+5,4,1,-2,6,5,90,90,0.127895432686203,0.241838741859655,0.240942118960879,0,2000,"mean_height_diff","clim_max_temp",NA,0
+5,4,1,-2,6,5,90,90,0.101481201283652,0.314983579482166,0.311298898458359,0,2000,"mean_height_diff","clim_min_temp",NA,0
+5,4,1,-2,6,5,90,90,0.123503067937171,0.864337924414985,0.853214024555933,0,2000,"mean_height_diff","clim_daily_rainfall",NA,0
+5,4,1,-1,6,5,90,90,0.290109865354023,0.0351743684305921,0.0347829659757033,0.002,2000,"mean_height_diff","clim_sunlight_hours",NA,0.00369230769230769
+5,4,1,-1,6,5,90,90,0.0873918656771524,0.30501629924711,0.29954285859873,0,2000,"mean_height_diff","clim_cum_7days_temp",NA,0
+5,4,1,-2,6,5,90,90,0.322581065560986,0.0168045876771552,0.0167328635182174,0.0015,2000,"mean_height_diff","clim_cum_7days_rainfall",NA,0.003
+5,4,1,-2,6,5,90,90,0.186249803360159,0.320359974254213,0.317212753408034,0,2000,"mean_height_diff","clim_cum_7days_sunlihg_hours",NA,0
+1,0,1,-1,4,3,107,107,0.690583490097336,0.308034325257608,0.279402425055548,0,2000,"mean_height_diff","grss_poa_1","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-1,4,3,99,99,0.687036632818305,0.308259088794207,0.293745208706269,0,2000,"mean_height_diff","PRO_Taxa00017","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.205696523119898,0.622599712370596,0.58168219555692,0,2000,"mean_height_diff","PRO_Taxa00019","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.685267653206085,0.381456299081641,0.352815299961875,0,2000,"mean_height_diff","PRO_Taxa00024","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.611537138174038,0.483040163941396,0.441142738203758,0,2000,"mean_height_diff","PRO_Taxa00037","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-1,4,3,99,99,0.40655547213155,0.78833038461925,0.743400652022592,0,2000,"mean_height_diff","PRO_Taxa00040","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.528355842272879,0.562988975758281,0.526388394405949,0,2000,"mean_height_diff","PRO_Taxa00046","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,0,4,3,103,103,0.545246484421866,0.519581190422021,0.472400074769902,0,2000,"mean_height_diff","PRO_Taxa00096","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,0,4,3,103,103,0.467743842656314,0.671284010902424,0.627540719909302,0,2000,"mean_height_diff","PRO_Taxa00168","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.11215722173268,0.656648464171567,0.606199303244548,0,2000,"mean_height_diff","PRO_Taxa00186","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.316466000187432,1.05975789971357,0.98887470628353,0,2000,"mean_height_diff","PRO_Taxa00332","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,-2,4,3,90,90,0.522248141103603,0.586914833378481,0.540572418239521,0,2000,"mean_height_diff","ITS_Taxa00007","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+2,1,1,0,5,4,94,94,0.784974778423965,0.29428105966855,0.231096994657026,0,2000,"mean_height_diff","ITS_Taxa00138","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,0,4,3,103,103,0.445739660113381,0.701875351030838,0.659095194489326,0,2000,"mean_height_diff","COI_Taxa00221","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+1,0,1,0,4,3,103,103,0.368965658708325,0.847233772039241,0.798563085752316,0,2000,"mean_height_diff","EUK_Taxa00213","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
+2,1,1,-2,5,4,90,90,0.560904959988414,0.360238704281348,0.34208100715237,0,2000,"mean_height_diff","EUK_Taxa00443","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0

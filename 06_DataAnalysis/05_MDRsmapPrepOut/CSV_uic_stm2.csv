@@ -1,0 +1,2 @@
+"E","E0","tau","tp","nn","nn0","n_lib","n_pred","rmse","te","ete","pval","n_surr","effect_var","cause_var","cond_var","fdr"
+1,0,1,0,4,3,94,94,0.461696093172251,0.362757665023443,0.347628065742345,0,2000,"COI_Taxa00211","mean_n_stem_diff","clim_cum_7days_temp, clim_cum_7days_sunlihg_hours",0
