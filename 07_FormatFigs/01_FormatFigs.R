@@ -137,11 +137,12 @@ y2 <- r3[[3]] + theme(plot.tag = element_text(face = "bold"), legend.position = 
   scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
   geom_text(data = y2_label, aes(x = x, y = y, label = label), color = "black")
 y3 <- (r3[[1]][[1]] + theme(plot.tag = element_text(face = "bold"), legend.position = "top") + ylim(0,330)+
-         scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
+         scale_x_discrete(labels=c("Conventional", "No Fertilizer")) + ylab("Total number of rice heads (/12 inds.)") +
          annotate("text", x = 1.5, y = 320, label = "****")) /
   (r3[[1]][[2]] + theme(plot.tag = element_text(face = "bold"), legend.position = "none") + ylim(0,720) +
      facet_wrap(~ name, ncol = 1) + scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
-     geom_text(data = y3_label, aes(x = x, y = y, label = label), color = "black")) +
+     geom_text(data = y3_label, aes(x = x, y = y, label = label), color = "black") +
+     ylab("Head weight (g/12 inds.)")) +
   plot_annotation(tag_levels = list(c("g","h"))) + plot_layout(heights = c(1,2))
 Fig_rice_yld <- y1 / y2 + plot_annotation(tag_levels = "a")
 

@@ -25,7 +25,7 @@ header-includes:
 
 ![
 **Figure 2 | Rice growth patterns and yields**  
-(**a**) Rice height (cm). (**b**) SPAD values. (**c**) The number of rice stems. (**d**) Changes in rice height per week. (**e**) Changes in SPAD values per week. (**f**) Changes in the number of rice stems per week. (**g**) The total number of rice heads per rice individual. (**h**) The total wet or dry weight (g) per 12 rice individuals. Solid lines indicate mean values. Green color and and filled circle indicate data from the paddy fields using the conventional farming methods, and yellow color and filled triangle indicate data from the paddy fields using no fertilizers. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
+(**a**) Rice height (cm). (**b**) SPAD values. (**c**) The number of rice stems. (**d**) Changes in rice height per week. (**e**) Changes in SPAD values per week. (**f**) Changes in the number of rice stems per week. (**g**) The total number of rice heads per 12 rice individual. (**h**) The total wet or dry weight of heads (g) per 12 rice individuals. Solid lines indicate mean values. Green color and and filled circle indicate data from the paddy fields using the conventional farming methods, and yellow color and filled triangle indicate data from the paddy fields using no fertilizers. \*_P_ < 0.05, \*\*_P_ < 0.01, \*\*\*_P_ < 0.001, and \*\*\*\*_P_ < 0.0001. "N.S." indicates that the difference between the two farming practices is not statistically clear. 
 ](formatted_figs/Fig2_RiceGrowth.pdf){width=100%}
 
 </center>
