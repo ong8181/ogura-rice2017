@@ -155,8 +155,8 @@ Fig_rice_all <- plot_grid(Fig_rice_raw, Fig_rice_dif, y3, nrow = 1, rel_widths =
 # ------------------------------------------------ #
 ## Specialized metabolites
 ### Prepare new labels
-m_labels <- c("Z_3_Hexenal"="(_Z_)-3-Hexenal", "E_2_Hexenal"="(_E_)-2-Hexenal",
-              "Z_3_Hexen_1_ol"="(_Z_)-3-Hexen-1-ol", "X2_4_Heptadienal"="2-4-Heptadienal",
+m_labels <- c("Z_3_Hexenal"="(_Z_)-3-hexenal", "E_2_Hexenal"="(_E_)-2-hexenal",
+              "Z_3_Hexen_1_ol"="(_Z_)-3-hexen-1-ol", "X2_4_Heptadienal"="2-4-heptadienal",
               "linalool"="Linalool", "b_caryophyllene"="&beta;-caryophyllene",
               "MeSA"="Methyl-salicylate (MeSA)", "diterpenoids_ug_g_FW"="Diterpenoids (&mu;g/g)")
 ## Annotate text
