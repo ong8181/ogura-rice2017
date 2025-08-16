@@ -1,3 +1,3 @@
 # Analysis code for Ushio et al. (2025) "Contrasting ecological communities in rice paddy fields under conventional and no-fertilizer farming practices"
 
-This repository contains analysis code to reproduce the results in Ushio et al. (2025) _bioRxiv_ xxxxxx.
+This repository contains analysis code to reproduce the results in Ushio et al. (2025) _bioRxiv_ https://doi.org/10.1101/2025.08.12.669982.
