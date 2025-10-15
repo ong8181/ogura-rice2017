@@ -1,6 +1,9 @@
 ####
 #### Ogura Rice 2017
 #### Compile and format figures
+#### 2024.12.10 Ushio (R4.3.2)
+#### 2025.07.17 Ushio (R4.4.2)
+#### 2025.10.15 Ushio (R4.4.2), revision
 ####
 
 # Load libraries
@@ -12,7 +15,6 @@ library(ggtext); packageVersion("ggtext") # 0.1.2, 2024.12.13
 
 # Create output directory
 dir.create("00_SessionInfo")
-
 
 # ------------------------------------------------ #
 # Load all figure data
@@ -80,26 +82,32 @@ Fig_climate <- (c1[[1]] + theme(plot.tag = element_text(face = "bold")) +
 # ------------------------------------------------ #
 ## Raw data
 r1_1 <- r1[[1]] + theme(legend.position = "top", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-06-01"), y = 110, label = "Management: ****")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-06-01"), y = 110, label = "Farming practice:\n****")
 r1_2 <- r1[[2]] + theme(legend.position = "none", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-06-01"), y = 42, label = "Management: ****")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-06-01"), y = 42, label = "Farming practice:\n****")
 r1_3 <- r1[[3]] + theme(legend.position = "none", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-06-01"), y = 31, label = "Management: ****")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-06-01"), y = 31, label = "Farming practice:\n****")
 r1_1$layers[[2]]$aes_params$alpha <- r1_2$layers[[2]]$aes_params$alpha <- r1_3$layers[[2]]$aes_params$alpha <- p_alpha
 r1_1$layers[[2]]$aes_params$size <- r1_2$layers[[2]]$aes_params$size <- r1_3$layers[[2]]$aes_params$size <- p_size
 ## Diff data
 r2_1 <- r2[[1]] + theme(legend.position = "top", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-08-10"), y = 19, label = "Management: ****")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-08-10"), y = 19, label = "Farming practice:\n****")
 r2_2 <- r2[[2]] + theme(legend.position = "none", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-08-10"), y = 17, label = "Management: N.S.")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-08-10"), y = 17, label = "Farming practice:\nN.S.")
 r2_3 <- r2[[3]] + theme(legend.position = "none", plot.tag = element_text(face = "bold")) +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-08-10"), y = 8.5, label = "Management: ****")
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-08-10"), y = 8.5, label = "Farming practice:\n****")
 r2_1$layers[[2]]$aes_params$alpha <- r2_2$layers[[2]]$aes_params$alpha <- r2_3$layers[[2]]$aes_params$alpha <- p_alpha
 r2_1$layers[[2]]$aes_params$size <- r2_2$layers[[2]]$aes_params$size <- r2_3$layers[[2]]$aes_params$size <- p_size
 ## Collect figures
@@ -129,18 +137,22 @@ y3_label <- data.frame(name = c("Total wet weight", "Total dry weight"),
 y3_label$name <- factor(y3_label$name, levels = c("Total wet weight", "Total dry weight"))
 
 ## Edit figures
+r3[[2]]@data$treatment[r3[[2]]@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
+r3[[3]]@data$treatment[r3[[3]]@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
+r3[[1]][[1]]@data$treatment[r3[[1]][[1]]@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
+r3[[1]][[2]]@data$treatment[r3[[1]][[2]]@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
 y1 <- r3[[2]] +
   theme(plot.tag = element_text(face = "bold"), legend.position = "top") + ylim(0,1200) +
-  scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
+  scale_x_discrete(labels=c("Conventional", "No-Fertilizer")) +
   geom_text(data = y1_label, aes(x = x, y = y, label = label), color = "black")
 y2 <- r3[[3]] + theme(plot.tag = element_text(face = "bold"), legend.position = "none") + ylim(0,30) +
-  scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
+  scale_x_discrete(labels=c("Conventional", "No-Fertilizer")) +
   geom_text(data = y2_label, aes(x = x, y = y, label = label), color = "black")
 y3 <- (r3[[1]][[1]] + theme(plot.tag = element_text(face = "bold"), legend.position = "top") + ylim(0,330)+
-         scale_x_discrete(labels=c("Conventional", "No Fertilizer")) + ylab("Total number of rice heads (/12 inds.)") +
+         scale_x_discrete(labels=c("Conventional", "No-Fertilizer")) + ylab("Total number of rice heads (/12 inds.)") +
          annotate("text", x = 1.5, y = 320, label = "****")) /
   (r3[[1]][[2]] + theme(plot.tag = element_text(face = "bold"), legend.position = "none") + ylim(0,720) +
-     facet_wrap(~ name, ncol = 1) + scale_x_discrete(labels=c("Conventional", "No Fertilizer")) +
+     facet_wrap(~ name, ncol = 1) + scale_x_discrete(labels=c("Conventional", "No-Fertilizer")) +
      geom_text(data = y3_label, aes(x = x, y = y, label = label), color = "black") +
      ylab("Head weight (g/12 inds.)")) +
   plot_annotation(tag_levels = list(c("g","h"))) + plot_layout(heights = c(1,2))
@@ -168,7 +180,8 @@ m1_label <- data.frame(name = m1_names,
 m1_label$name <- factor(m1_label$name, levels = m1_names)
 ## Edit figure
 Fig_mtbl_raw <- m1[[3]] +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   ylab("Normalized concentration\n(relatie peak area/leaf mass)") +
   facet_wrap(~ name, labeller = as_labeller(m_labels), nrow = 2, scales = "free_y") +
   theme(legend.position = "none", strip.text = element_markdown()) +
@@ -189,14 +202,19 @@ g1_label$name <- factor(g1_label$name, levels = grs_levels)
 g1[[2]]$data$name <- factor(g1[[2]]$data$name, levels = grs_levels)
 g1[[2]]$layers[[1]]$data$name <- factor(g1[[2]]$layers[[1]]$data$name, levels = grs_levels)
 g_labels <- c("cyper_all"="Cyperaceae", "poa_all"="Poaceae", "others_all"="Others")
-Fig_grss_sum <- g1[[2]] + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
+Fig_grss_sum <- g1[[2]] +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ name, labeller = as_labeller(g_labels), nrow = 1, scales = "free_y") +
   geom_text(data = g1_label, aes(x = x, y = y, label = label), color = "black") +
   theme(legend.position = "bottom") 
 Fig_grss_sum$layers[[2]]$aes_params$alpha <- p_alpha
 Fig_grss_sum$layers[[2]]$aes_params$size <- p_size
-Fig_grss_all <- g1[[1]] + theme(legend.position = "bottom") + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL)
 
+Fig_grss_all <- g1[[1]] + theme(legend.position = "bottom") +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer"))
+  
 ## Insect
 insc_levels <- c("cicadellidae_spp","thysanoptera_spp","other_planthopper")
 i1_label <- data.frame(name = insc_levels,
@@ -209,7 +227,9 @@ i1_label$name <- factor(i1_label$name, levels = insc_levels)
 i1$data$name <- factor(i1$data$name, levels = insc_levels)
 i1$layers[[1]]$data$name <- factor(i1$layers[[1]]$data$name, levels = insc_levels)
 i_labels <- c("cicadellidae_spp"="Cicadellidae","thysanoptera_spp"="Thysanoptera","other_planthopper"="Other planthoppers")
-Fig_insc_raw <- i1 + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
+Fig_insc_raw <- i1 +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ name, labeller = as_labeller(i_labels), nrow = 1, scales = "free_y")  +
   geom_text(data = i1_label, aes(x = x, y = y, label = label), color = "black") +
   theme(legend.position = "none") 
@@ -225,15 +245,17 @@ Fig_mgi_all <- (Fig_mtbl_raw + theme(plot.tag = element_text(face = "bold"))) /
 
 ## Dimensional reduction for plant cover and metabolites
 g2_1 <- g2[[2]] +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(21, 24), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   theme(plot.tag = element_text(face = "bold")) +
   labs(title = "Plant coverage (%) (stress = 0.1899)",
        subtitle = "The number of weeks, farming practice, and their interactions had statistically clear effects") +
   NULL
 m2_1 <- m2[[1]] +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(21, 24), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   theme(plot.tag = element_text(face = "bold")) +
   labs(title = "Plant specialized metabolites (stress = 0.1568)",
        subtitle = "The number of weeks had statistically clear effects") +
@@ -245,27 +267,31 @@ Fig_dim1 <- m2_1 / g2_1 + plot_annotation(tag_levels = "a")
 ## eDNA
 # ------------------------------------------------ #
 ### Overall patterns
-e1_1 <- e1[[2]] + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  annotate("text", x = ymd("2017-07-15"), y = 120, label = "Management: ****")
+e1[[1]]@data$treatment[e1[[1]]@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
+e1_1 <- e1[[2]] +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  annotate("text", x = ymd("2017-07-15"), y = 120, label = "Farming practice:\n****")
 e1_1$layers[[1]]$aes_params$alpha <- p_alpha
 e1_1$layers[[1]]$aes_params$size <- p_size
 #### NMDS
 e2_1 <- e2[[1]] +
-  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(21, 24), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   labs(title = "eDNA copy numbers (stress = 0.1924)",
        subtitle = "The number of weeks, farming practice, and their interactions had statistically clear effects") +
   NULL
 #### Combine all
-e1_label <- data.frame(treatment = c("Conventional", "No Fertilizer"),
-                       rep_tax = c(NA, NA),
+e1_label <- data.frame(treatment = c("Conventional", "No-Fertilizer"),
+                       rep_tax = c("Undetermined", "Undetermined"),
                        x = c(ymd("2017-08-05"), ymd("2017-05-20")),
-                       y = c(7e+07, 6e+07),
-                       label = c("Management:****", NA))
+                       y = c(6.5e+07, 5.5e+07),
+                       label = c("Farming practice:\n****", NA))
 Fig_edna <- (e1[[1]] +
                geom_text(data = e1_label, aes(x = x, y = y, label = label), color = "black") +
                theme(plot.tag = element_text(face = "bold"))) /
-  (e1_1 + ggtitle("OTU diversity (Management: ***)") + ylab("Number of OTUs") +
+  (e1_1 + ggtitle("OTU diversity") + ylab("Number of OTUs") +
      theme(plot.tag = element_text(face = "bold"))) /
   (e2_1 + theme(plot.tag = element_text(face = "bold"))) +
   plot_layout(heights = c(1.1, 1, 1)) +
@@ -278,8 +304,9 @@ e3_labels <- c("PRO_Taxa00006"="PRO_Taxa00006 (Comamonadaceae)", "PRO_Taxa00008"
                "PRO_Taxa00004"="PRO_Taxa00004 (_Paenibacillus_)", "PRO_Taxa00007"="PRO_Taxa00007 (Actinomycetes)",
                "PRO_Taxa00014"="PRO_Taxa00014 (_Flavobacterium_)", "PRO_Taxa00027"="PRO_Taxa00027 (Bacteria)",
                "PRO_Taxa00019"="PRO_Taxa00019 (Betaproteobacteria)", "PRO_Taxa00023"="PRO_Taxa00023 (_Pedobacter_)")
-eDNAtop <- e3 + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+eDNAtop <- e3 +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ OTU, scales = "free_y", labeller = as_labeller(e3_labels), nrow = 3) +
   theme(legend.position = "bottom", strip.text = element_markdown(), axis.title.y = element_markdown(), plot.tag = element_text(face = "bold")) +
   labs(title = "Top eDNA taxa",
@@ -294,8 +321,9 @@ e4_labels <- c("PRO_Taxa00038"="PRO_Taxa00038 (Actinomycetes)", "PRO_Taxa00061"=
                "PRO_Taxa00049"="PRO_Taxa00049 (Bacteria)", "EUK_Taxa00170"="EUK_Taxa00170 (Chrysophyceae)")
 Fig_eDNAtopSI1 <- eDNAtop
 
-eDNAtopdif <- e4 + scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+eDNAtopdif <- e4 +
+  scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ OTU, scales = "free_y", labeller = as_labeller(e4_labels), nrow = 3) +
   labs(title = "Top eDNA taxa contributing to the difference between the two paddy fields",
        y = "Abundance (eDNA copies/ml water + 0.5)") +
@@ -304,20 +332,22 @@ eDNAtopdif <- e4 + scale_color_manual(values = c(col_conv, col_nfrt), name = NUL
 
 # Major microbial groups (to compare them with Kamata et al. 1991)
 Fig_eDNA_bac <- (e5[[2]] +
-                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    theme(legend.position = "none",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNA_fun <- (e5[[1]] +
-                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    theme(legend.position = "bottom",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNA_rel1 <- (e7[[1]] + theme(legend.position = "right", 
                                   plot.tag = element_text(face = "bold")) +
                     guides(fill = guide_legend(ncol = 2)))
+Fig_eDNA_rel1@data$treatment[Fig_eDNA_rel1@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
 Fig_eDNA_rel2 <- (e7[[2]] + theme(legend.position = "right",
                                   plot.tag = element_text(face = "bold")))
+Fig_eDNA_rel2@data$treatment[Fig_eDNA_rel2@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
 Fig_eDNAtopSI2 <- 
   (Fig_eDNA_rel1 + plot_spacer() + plot_layout(widths = c(1,0.5))) / Fig_eDNA_bac / 
   (Fig_eDNA_rel2 + plot_spacer() + plot_layout(widths = c(1,0.7))) / Fig_eDNA_fun +
@@ -327,9 +357,10 @@ Fig_eDNAtopSI2 <-
 Fig_eDNA_rel3 <- (e7[[3]] + theme(legend.position = "right", 
                                   plot.tag = element_text(face = "bold")) +
                     guides(fill = guide_legend(ncol = 4)))
+Fig_eDNA_rel3@data$treatment[Fig_eDNA_rel3@data$treatment == "No Fertilizer"] <- "No-Fertilizer"
 Fig_eDNA_euk <- (e5[[3]] +
-                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    theme(legend.position = "bottom",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNAtopSI3 <- (Fig_eDNA_rel3 + plot_spacer() + plot_layout(widths = c(1,0.2))) / Fig_eDNA_euk +
@@ -344,18 +375,18 @@ Fig_eDNAtopSI4 <- eDNAtopdif
 # eDNA causal taxa (by UIC and S-map)
 # ------------------------------------------------ #
 Fig_eDNA_cause1 <- (e6[[1]] +
-                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "none",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_cause2 <- (e6[[2]] +
-                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "none",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_cause3 <- (e6[[3]] +
-                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL) +
-                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL) +
+                      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "bottom",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_Causal <- 
@@ -406,19 +437,31 @@ smap_label1 <- c("ITS_Taxa00138_tp0"="Undetermined (ITS_Taxa00138, tp=0)",
                  "PRO_Taxa00046_tp-2"="Bacteroidota (PRO_Taxa00046, tp=-2)",
                  "EUK_Taxa00443_tp-2"="Chlamydomonadales (EUK_Taxa00443, tp=-2)",
                  "PRO_Taxa00017_tp-1"="Burkholderiales (PRO_Taxa00017, tp=-1)")
+
+s1[[1]]@data$treatment <- factor(s1[[1]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s1[[2]]@data$treatment <- factor(s1[[2]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s1[[3]]@data$treatment <- factor(s1[[3]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+
 s1_all2 <-
   (s1[[1]] + scale_y_discrete(labels = smap_label1) +
      labs(tag = "a") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     #scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(legend.position = "none",
            axis.text.y = element_markdown(),
            plot.margin = margin(t=top_margin),
            plot.tag.position = tag_position1, plot.tag = element_text(face = "bold"))) +
   (s1[[2]] + labs(tag = "b") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(axis.text.y = element_blank(),
            plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            legend.position = "none", plot.tag = element_text(face = "bold"))) +
   (s1[[3]] + labs(tag = "c") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            axis.text.y = element_blank(), plot.tag = element_text(face = "bold")))
@@ -432,19 +475,29 @@ smap_label2 <- c("COI_Taxa00127_tp0"="_Cochliopodium_ (COI_Taxa00127, tp=0)",
                  "EUK_Taxa00306_tp-2"="Eukaryota (EUK_Taxa00306, tp=-2)", 
                  "PRO_Taxa00013_tp0"="Actinomycetes (PRO_Taxa00013, tp=0)",
                  "PRO_Taxa00011_tp0"="Bacteria (PRO_Taxa00011, tp=0)")
+s2[[1]]@data$treatment <- factor(s2[[1]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s2[[2]]@data$treatment <- factor(s2[[2]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s2[[3]]@data$treatment <- factor(s2[[3]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+
 s2_all2 <-
   (s2[[1]] + scale_y_discrete(labels = smap_label2) +
      labs(tag = "a") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(legend.position = "none",
            axis.text.y = element_markdown(),
            plot.margin = margin(t=top_margin),
            plot.tag.position = c(0.35, 1.03), plot.tag = element_text(face = "bold"))) +
   (s2[[2]] + labs(tag = "b") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(axis.text.y = element_blank(),
            plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            legend.position = "none", plot.tag = element_text(face = "bold"))) +
   (s2[[3]] + labs(tag = "c") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            axis.text.y = element_blank(), plot.tag = element_text(face = "bold")))
@@ -453,19 +506,29 @@ Fig_smap_spd <- s2_all2
 # Supplementary figures (S-map SPAD)
 smap_label3 <- c("PRO_Taxa00195_tp-1"="Silvanigrellaceae (PRO_Taxa00195, tp=-1)",
                  "EUK_Taxa00423_tp-1"="Chlorophyceae (EUK_Taxa00423, tp=-1)")
+s3[[1]]@data$treatment <- factor(s3[[1]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s3[[2]]@data$treatment <- factor(s3[[2]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+s3[[3]]@data$treatment <- factor(s3[[3]]@data$treatment, levels = c("Conventional", "No Fertilizer"))
+
 s3_all2 <-
   (s3[[1]] + scale_y_discrete(labels = smap_label3) +
      labs(tag = "a") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(legend.position = "none",
            axis.text.y = element_markdown(),
            plot.margin = margin(t=top_margin),
            plot.tag.position = c(0.38, 1.03), plot.tag = element_text(face = "bold"))) +
   (s3[[2]] + labs(tag = "b") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(axis.text.y = element_blank(),
            plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            legend.position = "none", plot.tag = element_text(face = "bold"))) +
   (s3[[3]] + labs(tag = "c") +
+     scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+     scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(plot.tag.position = tag_position2,
            plot.margin = margin(t=top_margin),
            axis.text.y = element_blank(), plot.tag = element_text(face = "bold")))
@@ -504,5 +567,6 @@ ggsave("formatted_figs/FigS11_CausalSppDynamics.pdf", Fig_eDNA_Causal, width = 1
 # Save compiled data
 # ------------------------------------------------ #
 # Save workspace and session information
+#save(list = ls(all.names = TRUE), file = sprintf("%s/%s.RData", outdir, outdir))
 macam::save_session_info()
 
