@@ -1,9 +1,6 @@
 ####
 #### Ogura Rice 2017
 #### Compile and format figures
-#### 2024.12.10 Ushio (R4.3.2)
-#### 2025.07.17 Ushio (R4.4.2)
-#### 2025.10.15 Ushio (R4.4.2), revision
 ####
 
 # Load libraries
@@ -307,6 +304,7 @@ e3_labels <- c("PRO_Taxa00006"="PRO_Taxa00006 (Comamonadaceae)", "PRO_Taxa00008"
 eDNAtop <- e3 +
   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ OTU, scales = "free_y", labeller = as_labeller(e3_labels), nrow = 3) +
   theme(legend.position = "bottom", strip.text = element_markdown(), axis.title.y = element_markdown(), plot.tag = element_text(face = "bold")) +
   labs(title = "Top eDNA taxa",
@@ -324,6 +322,7 @@ Fig_eDNAtopSI1 <- eDNAtop
 eDNAtopdif <- e4 +
   scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+  scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
   facet_wrap(~ OTU, scales = "free_y", labeller = as_labeller(e4_labels), nrow = 3) +
   labs(title = "Top eDNA taxa contributing to the difference between the two paddy fields",
        y = "Abundance (eDNA copies/ml water + 0.5)") +
@@ -334,11 +333,13 @@ eDNAtopdif <- e4 +
 Fig_eDNA_bac <- (e5[[2]] +
                    scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
-                   theme(legend.position = "none",
+                   scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   theme(legend.position = "bottom",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNA_fun <- (e5[[1]] +
                    scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    theme(legend.position = "bottom",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNA_rel1 <- (e7[[1]] + theme(legend.position = "right", 
@@ -361,6 +362,7 @@ Fig_eDNA_rel3@data$treatment[Fig_eDNA_rel3@data$treatment == "No Fertilizer"] <-
 Fig_eDNA_euk <- (e5[[3]] +
                    scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                   scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                    theme(legend.position = "bottom",
                          plot.tag = element_text(face = "bold")))
 Fig_eDNAtopSI3 <- (Fig_eDNA_rel3 + plot_spacer() + plot_layout(widths = c(1,0.2))) / Fig_eDNA_euk +
@@ -377,16 +379,19 @@ Fig_eDNAtopSI4 <- eDNAtopdif
 Fig_eDNA_cause1 <- (e6[[1]] +
                       scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "none",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_cause2 <- (e6[[2]] +
                       scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "none",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_cause3 <- (e6[[3]] +
                       scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
+                      scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
                       theme(legend.position = "bottom",
                             plot.tag = element_text(face = "bold")))
 Fig_eDNA_Causal <- 
@@ -447,7 +452,6 @@ s1_all2 <-
      labs(tag = "a") +
      scale_color_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      scale_shape_manual(values = c(16, 17), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
-     #scale_fill_manual(values = c(col_conv, col_nfrt), name = NULL, labels = c("No Fertilizer" = "No-Fertilizer")) +
      theme(legend.position = "none",
            axis.text.y = element_markdown(),
            plot.margin = margin(t=top_margin),

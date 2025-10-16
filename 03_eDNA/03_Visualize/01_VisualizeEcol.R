@@ -79,7 +79,6 @@ g2 <- ps_m2 %>%
   ggplot(aes(x = date, y = n_asv, color = treatment, shape = treatment)) +
   geom_jitter(width = 0, alpha = 0.5) +
   geom_line(data = ps_m3, aes(x = date, y = mean_asv)) +
-  #scale_fill_manual(values = c("red3", "royalblue"), name = NULL) +
   scale_color_manual(values = c("red3", "royalblue"), name = NULL) +
   scale_shape_manual(values = c(16, 17), name = NULL) +
   xlab(NULL) + ylab("No. of ASV") +
@@ -112,10 +111,9 @@ ps_m4 <- ps_top_melt %>%
   summarize(mean_abundance = mean(Abundance))
 
 t1 <- ps_top_melt %>%
-  ggplot(aes(x = date, y = Abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = Abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_m4, aes(x = date, y = mean_abundance+0.5)) +
-  #stat_smooth(se = FALSE) +
   facet_wrap(~ OTU, scales = "free_y") +
   scale_y_log10(label= macam::label_10_to_power) +
   labs(x = NULL, y = "Abundance (eDNA copies /ml water + 0.5)")
@@ -138,7 +136,7 @@ ps_a2 <- ps_a1 %>%
 ps_a1$phylum[ps_a1$phylum == ""] <- "Undetermined"
 ps_a2$phylum[ps_a2$phylum == ""] <- "Undetermined"
 a1 <- ps_a1 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_a2, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ phylum, scales = "free_y", ncol = 4) +
@@ -162,7 +160,7 @@ ps_a4$phylum[ps_a4$phylum == ""] <- "Undetermined"
 ps_a3$phylum <- factor(ps_a3$phylum, levels = c(unique(ps_a3$phylum)[2:11], "Undetermined"))
 ps_a4$phylum <- factor(ps_a4$phylum, levels = c(unique(ps_a4$phylum)[2:11], "Undetermined"))
 a2 <- ps_a3 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_a4, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ phylum, scales = "free_y", ncol = 4) +
@@ -186,7 +184,7 @@ ps_a6$phylum[ps_a6$phylum == ""] <- "Undetermined"
 ps_a5$phylum <- factor(ps_a5$phylum, levels = c(unique(ps_a5$phylum)[2:21], "Undetermined"))
 ps_a6$phylum <- factor(ps_a6$phylum, levels = c(unique(ps_a6$phylum)[2:21], "Undetermined"))
 a3 <- ps_a5 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_a6, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ phylum, scales = "free_y", ncol = 4) +
@@ -213,7 +211,7 @@ ps_c2 <- ps_c1 %>%
 ps_c1$OTU <- factor(ps_c1$OTU, levels = cause_spp1)
 ps_c2$OTU <- factor(ps_c2$OTU, levels = cause_spp1)
 c1 <- ps_c1 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_c2, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ OTU, scales = "free_y", ncol = 4) +
@@ -234,7 +232,7 @@ ps_c4 <- ps_c3 %>%
 ps_c3$OTU <- factor(ps_c3$OTU, levels = cause_spp2)
 ps_c4$OTU <- factor(ps_c4$OTU, levels = cause_spp2)
 c2 <- ps_c3 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_c4, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ OTU, scales = "free_y", ncol = 4) +
@@ -255,7 +253,7 @@ ps_c6 <- ps_c5 %>%
 ps_c5$OTU <- factor(ps_c5$OTU, levels = cause_spp3)
 ps_c6$OTU <- factor(ps_c6$OTU, levels = cause_spp3)
 c3 <- ps_c5 %>%
-  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment)) +
+  ggplot(aes(x = date, y = total_abundance + 0.5, color = treatment, shape = treatment)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.8) +
   geom_line(data = ps_c6, aes(x = date, y = mean_abundance+0.5, color = treatment)) +
   facet_wrap(~ OTU, scales = "free_y", ncol = 4) +
